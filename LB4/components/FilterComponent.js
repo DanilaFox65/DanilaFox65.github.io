@@ -6,9 +6,9 @@ export class FilterComponent {
 
     getHTML() {
         return `
-            <div class="filter-container">
+            <div class="filter-container text-center mb-3">
                 <label for="filter">Фильтр:</label>
-                <select id="filter" name="filter">
+                <select id="filter" name="filter" class="form-select mx-auto" style="max-width: 200px;">
                     <option value="">Все</option>
                     <option value="friends">Друзья</option>
                 </select>
