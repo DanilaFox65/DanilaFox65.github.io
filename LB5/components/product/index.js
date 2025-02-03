@@ -15,6 +15,7 @@ export class ProductComponent {
                             <div class="card-body">
                                 <h5 class="card-title">${data.first_name} ${data.last_name}</h5>
                             </div>
+                            <p class="card-title">id: ${data.id || 'Неизвестно'}</p>
                         </div>
                     </div>
                 </div>

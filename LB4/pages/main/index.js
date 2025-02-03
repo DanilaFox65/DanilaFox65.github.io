@@ -32,14 +32,14 @@ export class MainPage {
     }
 
     getData() {
-        // Отправляем запрос с выбранным фильтром
+        
         ajax.post(urls.getGroupMembers(groupId, this.filter), (data) => {
             this.renderData(data.response.items);
         });
     }
 
     renderData(items) {
-        this.pageRoot.innerHTML = ''; // Очистить страницу перед отрисовкой новых данных
+        this.pageRoot.innerHTML = ''; 
         items.forEach((item) => {
             const productCard = new ProductCardComponent(this.pageRoot);
             productCard.render(item, this.clickCard.bind(this));
@@ -53,8 +53,8 @@ export class MainPage {
         productPage.render()
     }
     onFilterChange(filter) {
-        this.filter = filter; // Обновляем выбранный фильтр
-        this.getData(); // Перезапрашиваем данные с новым фильтром
+        this.filter = filter; 
+        this.getData(); 
     }
         
     render() {
@@ -62,7 +62,7 @@ export class MainPage {
         const html = this.getHTML();
         this.parent.insertAdjacentHTML('beforeend', html);
 
-        // Рендерим фильтр
+        
         const filterComponent = new FilterComponent(this.filterRoot, this.onFilterChange.bind(this));
         filterComponent.render();
 
